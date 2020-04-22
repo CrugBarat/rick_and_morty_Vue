@@ -1,28 +1,34 @@
 <template lang="html">
   <div>
-    <select v-on:change="handleSelect" v-model="selectedCharacter">
-      <select-item v-for="(character, index) in characters" :character="character" :key="index"></select-item>
-    </select>
+    <input type="text" placeholder="Search" v-model="searchCharacters">
+    <list-item v-if="searchCharacters" v-for="(character, index) in filteredCharacters" :character="character" :key="index"></list-item>
   </div>
 
 </template>
 
 <script>
-// import ListItem from './ListItem.vue';
-import SelectItem from './SelectItem.vue';
+import ListItem from './ListItem.vue';
 
 import {eventBus} from '../main.js'
 
 export default {
   data () {
     return {
-      selectedCharacter: null
+      selectedCharacter: null,
+      searchCharacters: ""
     }
   },
   name: 'character-list',
   props: ['characters'],
   components: {
-    'select-item': SelectItem
+    'list-item': ListItem
+  },
+  computed: {
+    filteredCharacters(){
+      return this.characters.filter((character) => {
+        return character.name.toLowerCase().includes(this.searchCharacters.toLowerCase())
+      });
+    }
   },
   methods: {
     handleSelect: function () {

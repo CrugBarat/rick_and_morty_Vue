@@ -12,12 +12,13 @@ import CharacterList from './components/CharacterList.vue';
 import {eventBus} from './main.js';
 import CharacterDetail from './components/CharacterDetail.vue';
 
+
 export default {
   name: 'app',
   data() {
     return {
       characters: [],
-      selectedCharacter: null
+      selectedCharacter: null,
     }
   },
   mounted() {
@@ -31,7 +32,7 @@ export default {
   },
   components: {
     "character-list": CharacterList,
-    "character-detail": CharacterDetail
+    "character-detail": CharacterDetail,
   }
 }
 </script>
