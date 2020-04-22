@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <h1>Rick & Morty</h1>
-    <character-list :characters="characters"></character-list>
+    <character-list :characters="characters" v-model="selectedCharacter"></character-list>
     <character-detail v-if="selectedCharacter" :character="selectedCharacter"></character-detail>
   </div>
 </template>
