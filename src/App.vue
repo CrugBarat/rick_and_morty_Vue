@@ -1,11 +1,14 @@
 <template lang="html">
-<character-list></character-list>
+  <div>
+    <h1>Rick & Morty</h1>
+    <character-list :characters="characters"></character-list>
+  </div>
 </template>
 
 <script>
 
 import CharacterList from './components/CharacterList.vue';
-import {eventBus} from './main.js';
+// import {eventBus} from './main.js';
 
 
 export default {
@@ -19,7 +22,7 @@ export default {
   mounted() {
     fetch('https://rickandmortyapi.com/api/character/')
     .then(res => res.json())
-    .then(characters => this.characters = characters)
+    .then(characters => this.characters = characters.results)
   },
   components: {
     "character-list": CharacterList
