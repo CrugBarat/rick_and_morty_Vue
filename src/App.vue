@@ -43,7 +43,7 @@ export default {
     font-family: 'RickMortyFont';
     color: #41B4C7;
     text-shadow: -1px -1px 0 #6BA230, 1px -1px 0 #6BA230, -1px 1px 0 #6BA230, 1px 1px 0 #6BA230;
-    font-size: 100px;
+    font-size: 120px;
     text-align: center;
     padding: 25px;
     margin: 0;
@@ -59,10 +59,12 @@ export default {
 body {
   background-image: url('./assets/background.png');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   width: 100vw;
   height: 100vh;
+  display: block;
+  cursor: url('./assets/gun.png'), auto;
 }
 
 @font-face {

@@ -1,5 +1,9 @@
 <template lang="html">
-<li v-on:click="handleClick">{{character.name}}</li>
+  <div class="list-items-container">
+    <div class="list-items">
+      <li v-on:click="handleClick"> <img :src="character.image"> {{character.name}}</li>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,4 +21,30 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+li {
+  list-style-type: none;
+}
+
+.list-items-container {
+  display: block;
+  font-family: 'Bangers', cursive;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.list-items:hover {
+  background-color: #97ce4c;
+}
+
+.list-items {
+  border: dashed 3px;
+  width: 350px;
+  display: inline-block;
+}
+
+img {
+  border-radius: 50%;
+  height: 40px;
+}
 </style>
