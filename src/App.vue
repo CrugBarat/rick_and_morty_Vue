@@ -59,8 +59,8 @@ export default {
 body {
   background-image: url('./assets/background.png');
   background-size: cover;
-  background-repeat: repeat-y;
   background-position: center;
+  background-attachment: fixed;
   width: 100vw;
   height: 100vh;
   display: block;
