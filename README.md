@@ -11,7 +11,7 @@ A basic Rick & Morty search app, which uses an API as a data source:
 
 **Markup/Styling**: HTML5/CSS3
 
-The Rick & Morty app can dynamically search data requested from an API and return details stored for a corresponding result. The app includes several interchangeable and reusable components to execute the character search, including a select menu, an unordered list and search bar.
+The Rick & Morty app can dynamically search data requested from an API and return details stored for a corresponding result.
 
 This exercise was tasked to me by CodeClan, Glasgow where I studied towards a PDA Level 8 in Professional Software Development. The exercise brief can be found below.
 
