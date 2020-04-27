@@ -9,10 +9,15 @@
       <p>{{character.location.name}}</p>
       <p>{{character.status}}</p>
     </div>
+    <div class="episodes-list-container">
+      <episode-list v-if="episodes.length" :episodes="episodes"></episode-list>
+    </div>
   </div>
 </template>
 
 <script>
+import EpisodeList from './EpisodeList.vue';
+
 export default {
   name: 'character-detail',
   props: ['character'],
@@ -35,7 +40,10 @@ export default {
           this.episodes = data;
         });
       }
-    }
+    },
+    components: {
+    'episode-list': EpisodeList
+  },
   }
 </script>
 
