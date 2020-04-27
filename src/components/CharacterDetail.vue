@@ -44,6 +44,11 @@ export default {
     components: {
     'episode-list': EpisodeList
   },
+  watch: {
+    character(){
+      this.getEpisodes()
+    }
+  },
   }
 </script>
 
