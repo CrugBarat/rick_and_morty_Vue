@@ -10,7 +10,7 @@
       <p>{{character.status}}</p>
     </div>
     <div class="episodes-list-container">
-      <episode-list v-if="episodes.length" :episodes="episodes"></episode-list>
+      <episode-list v-if="episodes.length" :episodes="episodes" :character="character"></episode-list>
     </div>
   </div>
 </template>

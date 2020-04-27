@@ -1,6 +1,7 @@
 <template lang="html">
   <div v-if="episodes" class="episode-container">
   <div  class="episode-list">
+    <p class="name-font">{{this.character.name}}</p>
     <p class="name-font">Episode List</p>
       <episode-list-item v-for="(episode, index) in episodes" :key="index" :episode="episode"></episode-list-item>
   </div>
@@ -12,7 +13,7 @@
 import EpisodeListItem from './EpisodeListItem'
 export default {
   name: 'episode-list',
-  props: ['episodes'],
+  props: ['episodes', 'character'],
   components: {
     'episode-list-item': EpisodeListItem
   }
