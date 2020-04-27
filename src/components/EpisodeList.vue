@@ -29,7 +29,7 @@ export default {
 
 .episode-list {
   border: dashed 3px #fff;
-  width: 350px;
+  width: 500px;
   color: #fff;
   font-size: 20px;
   display: inline-block;

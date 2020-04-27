@@ -1,13 +1,24 @@
 <template lang="html">
-  <div class="episodes">
-    <p>{{episode.name}}</p>
-  </div>
+    <p @mouseover="mouseOver" @mouseleave="mouseLeave">{{initialEpisode}}</p>
 </template>
 
 <script>
 export default {
   name: 'episode-list-item',
-  props: ['episode']
+  props: ['episode'],
+  data() {
+    return {
+      initialEpisode: this.episode.name
+    }
+  },
+  methods: {
+    mouseOver(){
+      this.initialEpisode = this.episode.episode
+    },
+    mouseLeave(){
+      this.initialEpisode = this.episode.name
+    }
+  }
 }
 </script>
 
@@ -15,5 +26,9 @@ export default {
   p {
     padding: 0;
     margin: 0;
+  }
+
+  p:hover {
+    color: #41B4C7;
   }
 </style>
