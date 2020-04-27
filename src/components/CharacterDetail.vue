@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="details-container">
+  <div v-on:click="handleClick" class="details-container">
     <div class="char-details">
       <img :src="character.image">
       <p class="name-font">{{character.name}}</p>
@@ -17,6 +17,8 @@
 
 <script>
 import EpisodeList from './EpisodeList.vue';
+
+import {eventBus} from '../main.js';
 
 export default {
   name: 'character-detail',
@@ -39,6 +41,10 @@ export default {
         .then((data) => {
           this.episodes = data;
         });
+      },
+
+      handleClick(){
+        eventBus.$emit('character-details-selected', this.character)
       }
     },
     components: {

@@ -33,9 +33,15 @@ export default {
     }
   },
   methods: {
-    handleSelect: function () {
+    handleSelect() {
       eventBus.$emit('character-selected', this.selectedCharacter)
     }
+  },
+  mounted() {
+    eventBus.$on('character-details-selected', (character) => {
+      this.selectedCharacter = character;
+      this.searchCharacters = "";
+    });
   }
 }
 </script>
