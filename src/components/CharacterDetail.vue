@@ -15,8 +15,28 @@
 <script>
 export default {
   name: 'character-detail',
-  props: ['character']
-}
+  props: ['character'],
+  data() {
+    return {
+      episodes: []
+    }
+  },
+  mounted() {
+    this.getEpisodes();
+  },
+  methods: {
+    getEpisodes() {
+        const episodePromises = this.character.episode.map((episode) => {
+          return fetch(episode).then(res => res.json());
+        });
+
+        Promise.all(episodePromises)
+        .then((data) => {
+          this.episodes = data;
+        });
+      }
+    }
+  }
 </script>
 
 <style lang="css" scoped>
