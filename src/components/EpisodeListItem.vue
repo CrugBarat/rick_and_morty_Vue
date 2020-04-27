@@ -1,5 +1,7 @@
 <template lang="html">
-  <li>{{episode.name}}</li>
+  <div class="episodes">
+    <p>{{episode.name}}</p>
+  </div>
 </template>
 
 <script>
@@ -10,9 +12,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-li {
-  list-style: none;
-  color: white;
-}
+  p {
+    padding: 0;
+    margin: 0;
+  }
 </style>
