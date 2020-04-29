@@ -3,7 +3,7 @@
 
 # Rick & Morty
 
-A basic Rick & Morty search app, which uses an API as a data source:
+A basic Rick & Morty search app, which uses a HTTP RESTful API as a data source:
 
 **Programming Language**: JavaScript
 
@@ -49,7 +49,7 @@ Your task is to create an app that shows info for all the characters of the TV s
 npm install
 ```
 
-- Compile for development
+- Compile
 
 ```
 npm run serve
